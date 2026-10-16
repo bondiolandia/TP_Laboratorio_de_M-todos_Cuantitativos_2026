@@ -1,0 +1,165 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOOMGcqzUiv+OfbUgvS5QVM",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/bondiolandia/TP_Laboratorio_de_M-todos_Cuantitativos_2026/blob/main/notebook_Evolucion_del_Anime\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 24,
+      "metadata": {
+        "id": "6_2WPTWMqrc8"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "QJRGKyDHrGp8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# CELDA 1: Configurar la identidad de Git (cambien esto con sus datos)\n",
+        "!git config --global user.name \"Tu Nombre de GitHub\"\n",
+        "!git config --global user.email \"tu_correo@email.com\""
+      ],
+      "metadata": {
+        "id": "duXD9RD91RML"
+      },
+      "execution_count": 25,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "\n",
+        "import os\n",
+        "from google.colab import userdata\n",
+        "\n",
+        "token = userdata.get('GITHUB_TOKEN')\n",
+        "\n",
+        "if not token:\n",
+        "    raise ValueError(\"❌ ERROR: Configura tu 'GITHUB_TOKEN' en el menú de la llave 🔑 a la izquierda antes de continuar.\")\n",
+        "\n",
+        "# URL universal: usa el token del usuario activo pero apunta al repo de la organización/dueño\n",
+        "repo_url = f\"https://{token}@github.com/bondiolandia/\"\n",
+        "\n",
+        "# Si la carpeta ya existe (porque ya corrieron la celda antes), no vuelve a clonar\n",
+        "if not os.path.exists('TP_Laboratorio_de_M-todos_Cuantitativos_2026'):\n",
+        "    !git clone {repo_url}\n",
+        "else:\n",
+        "    print(\"El repositorio ya está clonado.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4_-Cs94U7-wV",
+        "outputId": "16d7529c-515d-458f-b29f-b51f39ac563a"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cloning into 'bondiolandia'...\n",
+            "remote: Not Found\n",
+            "fatal: repository 'https://github.com/bondiolandia/' not found\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "cd {REPO_NAME}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4cAe7iBo_UDq",
+        "outputId": "69087c46-2ec9-4042-f07a-40e93d3ae6b7"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[Errno 2] No such file or directory: 'TP_Laboratorio_de_M-todos_Cuantitativos_2026'\n",
+            "/content/TP_Laboratorio_de_M-todos_Cuantitativos_2026/TP_Laboratorio_de_M-todos_Cuantitativos_2026\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%cd TP_Laboratorio_de_M-todos_Cuantitativos_2026\n",
+        "\n",
+        "# Opcional: Si quieren guardar el propio archivo .ipynb actual en la carpeta clonada\n",
+        "# !cp \"/content/drive/MyDrive/.../Tu_Cuaderno.ipynb\" .\n",
+        "\n",
+        "!git add .\n",
+        "!git commit -m \"Actualización desde colab\"\n",
+        "!git push origin main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "s90R5ixlDgq0",
+        "outputId": "b6546640-6c8c-4ce2-bb9a-a0e905d7360a"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[Errno 2] No such file or directory: 'TP_Laboratorio_de_M-todos_Cuantitativos_2026'\n",
+            "/content/TP_Laboratorio_de_M-todos_Cuantitativos_2026/TP_Laboratorio_de_M-todos_Cuantitativos_2026\n",
+            "On branch main\n",
+            "Your branch is up to date with 'origin/main'.\n",
+            "\n",
+            "nothing to commit, working tree clean\n",
+            "Everything up-to-date\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
